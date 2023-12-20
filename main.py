@@ -1,40 +1,26 @@
-# #user prompt
+# TODO Application
 todos = []
 while True:
-    user_prompt = input("Add or Show or Exit: ")
-    user_prompt=user_prompt.strip()
+    user_prompt = input("Type Add , Show , Edit or Exit: ")
+    user_prompt = user_prompt.strip()
     match user_prompt:
-        case    "add":
-            item = input("Enter item to add in todo list:")
-            item= item.strip()
+        case "add":
+            item = input("Enter item to add in todo list:").strip()
+            # item= item.strip()
             todos.append(item)
-        case    "show":
+        case "show":
             print("Todo list contains:")
             for item in todos:
+                item = item.strip().title()
                 print(item)
-        case    "exit":
+        case "edit":
+            item_number = int(input('Enter item number:'))
+            item_number = item_number - 1
+            new_item = input('Enter new item:').strip()
+            todos[item_number] = new_item
+            # todos.append()
+        case "exit":
             print("Bye!")
             break
-
-
-
-
-# prompt = "Enter a ToDo -:"
-#
-# todos = []
-#
-# while True:
-#     user_prompt1 = input(prompt)
-#     todos.append(user_prompt1)
-#     print(todos)
-# name = "pallab"
-# while True:
-#
-#     print(name.capitalize())
-import upper
-
-# while True:
-#     name = input("Enter name -")
-#     up =name.upper()
-#     print(up)
-
+        case _:
+            print("Invalid input")
