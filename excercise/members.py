@@ -1,4 +1,4 @@
-file = open("members.txt", "r")
+file = open("../files/members.txt", "r")
 user = file.readlines()
 print("Existing Users :-")
 for u in user:
@@ -10,13 +10,13 @@ while True:
         case "Y":
             member = input("enter new member name: ") + '\n'
             user.append(member)
-            file = open("members.txt", "w")
+            file = open("../files/members.txt", "w")
             file.writelines(user)
             file.close()
         case "N":
             print("Thank you for using" + '\n')
             print("List of Members -: ")
-            file = open("members.txt", "r")
+            file = open("../files/members.txt", "r")
             user = file.readlines()
             for u in user:
                 print(u)
